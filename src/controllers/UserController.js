@@ -12,6 +12,19 @@ class UserController {
     }
   }
 
+  static async getUserById(req, res) {
+    try {
+      const user = await User.findByPk(Number(req.params.id), { attributes: { exclude: ["password"] } });
+      
+      if (!user) return res.status(404).json({ message: "Usuário não encontrado!" });
+      
+      res.status(200).json(user);
+    } catch (error) {
+      res.status(500).json({ error: "Erro ao buscar usuário." });
+      console.log(error);
+    }
+  }
+
   static async updateUser(req, res) {
     try {
       const { name } = req.body;

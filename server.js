@@ -16,6 +16,7 @@ app.post("/login", AuthController.login);
 
 // Rotas Protegidas (CRUD)
 app.get("/users", authMiddleware.verifyToken, UserController.getAllUsers);
+app.get("/users/:id", authMiddleware.verifyToken, UserController.getUserById);
 app.put("/users/:id", authMiddleware.verifyToken, UserController.updateUser);
 app.delete("/users/:id", authMiddleware.verifyToken, UserController.deleteUser);
 

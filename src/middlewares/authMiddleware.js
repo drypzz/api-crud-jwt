@@ -1,7 +1,5 @@
 const jwt = require("jsonwebtoken");
-const { Model } = require("sequelize");
 require("dotenv").config();
-
 
 class AuthMiddleware {
 
