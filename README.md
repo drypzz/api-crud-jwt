@@ -62,18 +62,7 @@ cd api-crud-jwt
 npm install
 ```
 
-### 3. Configure o `.env`:
-Crie um arquivo `.env` com a variável:
-```env
-JWT_SECRET=sua_chave_gerada
-```
-
-### 4. Rode as migrations (caso existam):
-```bash
-npx sequelize-cli db:migrate
-```
-
-### 5. Inicie o servidor:
+### 3. Inicie o servidor:
 ```bash
 npm start
 ```
@@ -97,7 +86,7 @@ O servidor será iniciado em `http://localhost:3000`
 
 > 🔒 Rotas protegidas exigem o header:
 ```http
-Authorization: Bearer SEU_TOKEN_JWT
+Authorization: Bearer SEU_TOKEN_JWT_DO_LOGIN
 ```
 
 ---
